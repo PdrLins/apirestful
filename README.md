@@ -77,4 +77,4 @@ Obs: O id do usuário é um sequencial gerado pelo banco e único.
 * Persistência com Entity Framework e Banco de dados em memória.
 * Framework IOC padrão do .Net Core.
 * JSON Web Token (JWT) como auteticação.
-* Utilizar .Net framework ou .Net Core.
+* .Net Core 2.0.
