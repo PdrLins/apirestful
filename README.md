@@ -73,7 +73,7 @@ Obs: O id do usuário é um sequencial gerado pelo banco e único.
     - Token expirado [retornar um erro com a mensagem "Unauthorized - invalid session"];
 
 ## Tecnologias
-* Angular 2+ (7).
+* Angular 2> (4).
 * Persistência com Entity Framework e Banco de dados em memória.
 * Framework IOC padrão do .Net Core.
 * JSON Web Token (JWT) como auteticação.
