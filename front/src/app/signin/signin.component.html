@@ -1,0 +1,14 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <div class="boxTitle">
+      <h1>Signin!</h1>
+      <span (click)='cleanError()' class="error">{{error}}</span>
+    </div>
+    <input type="text" [(ngModel)]="user.email" class="fadeIn second" name="login" placeholder="email">
+    <input type="password" [(ngModel)]="user.password" class="fadeIn third" name="login" placeholder="password">
+    <input type="button" class="fadeIn fourth" value="Log In" (click)="signin()">
+    <div id="formFooter">
+      <a routerLink='/signup'>signup</a>
+    </div>
+  </div>
+</div>

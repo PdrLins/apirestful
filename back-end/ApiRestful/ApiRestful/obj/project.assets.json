@@ -1913,10 +1913,10 @@
           "lib/netstandard2.0/Microsoft.Extensions.Configuration.Binder.dll": {}
         }
       },
-      "Microsoft.Extensions.Configuration.CommandLine/2.0.2": {
+      "Microsoft.Extensions.Configuration.CommandLine/2.1.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Extensions.Configuration": "2.0.2"
+          "Microsoft.Extensions.Configuration": "2.1.1"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.Extensions.Configuration.CommandLine.dll": {}
@@ -6883,16 +6883,16 @@
         "microsoft.extensions.configuration.binder.nuspec"
       ]
     },
-    "Microsoft.Extensions.Configuration.CommandLine/2.0.2": {
-      "sha512": "AjlsGcY+AJAftT0CJzC/meyFKWEeP309CHkZFXU2KmsmHITi/SJlNItLp3MxMshEBYhGzKeq4XYOEFwNoYzALQ==",
+    "Microsoft.Extensions.Configuration.CommandLine/2.1.1": {
+      "sha512": "mLtD/B9sx0jycMcPcIweb5x0bRKBoDcN+xONQnw6urMZTyazyJED+zTfj2ZCbVsloh7SW2W6f16UpELD+xtaOA==",
       "type": "package",
-      "path": "microsoft.extensions.configuration.commandline/2.0.2",
+      "path": "microsoft.extensions.configuration.commandline/2.1.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/netstandard2.0/Microsoft.Extensions.Configuration.CommandLine.dll",
         "lib/netstandard2.0/Microsoft.Extensions.Configuration.CommandLine.xml",
-        "microsoft.extensions.configuration.commandline.2.0.2.nupkg.sha512",
+        "microsoft.extensions.configuration.commandline.2.1.1.nupkg.sha512",
         "microsoft.extensions.configuration.commandline.nuspec"
       ]
     },
@@ -13885,6 +13885,7 @@
       "Microsoft.AspNetCore.All >= 2.0.9",
       "Microsoft.EntityFrameworkCore.InMemory >= 2.1.4",
       "Microsoft.EntityFrameworkCore.Tools >= 2.1.4",
+      "Microsoft.Extensions.Configuration.CommandLine >= 2.1.1",
       "Microsoft.NETCore.App >= 2.0.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.0.4",
       "System.IdentityModel.Tokens.Jwt >= 5.3.0"
@@ -13897,11 +13898,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\desafio-pitang\\back-end\\ApiRestful\\ApiRestful\\ApiRestful.csproj",
+      "projectUniqueName": "C:\\apirestful\\back-end\\ApiRestful\\ApiRestful\\ApiRestful.csproj",
       "projectName": "apirestful",
-      "projectPath": "C:\\desafio-pitang\\back-end\\ApiRestful\\ApiRestful\\ApiRestful.csproj",
+      "projectPath": "C:\\apirestful\\back-end\\ApiRestful\\ApiRestful\\ApiRestful.csproj",
       "packagesPath": "C:\\Users\\Pedro Lins\\.nuget\\packages\\",
-      "outputPath": "C:\\desafio-pitang\\back-end\\ApiRestful\\ApiRestful\\obj\\",
+      "outputPath": "C:\\apirestful\\back-end\\ApiRestful\\ApiRestful\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -13944,6 +13945,10 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[2.1.4, )"
+          },
+          "Microsoft.Extensions.Configuration.CommandLine": {
+            "target": "Package",
+            "version": "[2.1.1, )"
           },
           "Microsoft.NETCore.App": {
             "target": "Package",

@@ -1,0 +1,19 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <div class="boxTitle">
+      <h1 *ngIf="user != nul">Hello {{user.firstName}} {{user.lastName}}</h1>
+      <span (click)='cleanError()' class="error">{{error}}</span>
+    </div>
+    <div id="information" *ngIf="user != null">
+      <span class='spnTitle'>First name: {{user.firstName}}</span>
+      <span class='spnTitle'>Last name: {{user.lastName}}</span>
+      <span class='spnTitle'>Email: {{user.email}}</span>
+      <span class='spnTitle'>Created At: {{user.createdAt | date:'fullDate'}}</span>
+      <span class='spnTitle'>Last Login: {{user.lastLogin | date:'fullDate'}}</span>
+      <!-- <span>First name: {{user.firstName}}</span>  -->
+    </div>
+    <div id="formFooter">
+      <a (click)="logout()">logout</a>
+    </div>
+  </div>
+</div>
