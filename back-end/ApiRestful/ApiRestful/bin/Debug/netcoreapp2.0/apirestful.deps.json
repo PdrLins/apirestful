@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "5fee4ba75deb1c7af2c479fafd79e86ec3eda9fb"
+    "signature": "f40a73a801c17109e8715e319d07d06950c789cb"
   },
   "compilationOptions": {
     "defines": [
@@ -27,6 +27,7 @@
           "Microsoft.AspNetCore.All": "2.0.9",
           "Microsoft.EntityFrameworkCore.InMemory": "2.1.4",
           "Microsoft.EntityFrameworkCore.Tools": "2.1.4",
+          "Microsoft.Extensions.Configuration.CommandLine": "2.1.1",
           "Microsoft.NETCore.App": "2.0.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.0.4",
           "System.IdentityModel.Tokens.Jwt": "5.3.0"
@@ -150,7 +151,7 @@
           "Microsoft.AspNetCore.Server.IISIntegration": "2.0.3",
           "Microsoft.AspNetCore.Server.Kestrel": "2.0.4",
           "Microsoft.AspNetCore.Server.Kestrel.Https": "2.0.4",
-          "Microsoft.Extensions.Configuration.CommandLine": "2.0.2",
+          "Microsoft.Extensions.Configuration.CommandLine": "2.1.1",
           "Microsoft.Extensions.Configuration.EnvironmentVariables": "2.0.2",
           "Microsoft.Extensions.Configuration.FileExtensions": "2.0.2",
           "Microsoft.Extensions.Configuration.Json": "2.0.2",
@@ -273,7 +274,7 @@
           "Microsoft.Extensions.Configuration.Abstractions": "2.1.1",
           "Microsoft.Extensions.Configuration.AzureKeyVault": "2.0.2",
           "Microsoft.Extensions.Configuration.Binder": "2.1.1",
-          "Microsoft.Extensions.Configuration.CommandLine": "2.0.2",
+          "Microsoft.Extensions.Configuration.CommandLine": "2.1.1",
           "Microsoft.Extensions.Configuration.EnvironmentVariables": "2.0.2",
           "Microsoft.Extensions.Configuration.FileExtensions": "2.0.2",
           "Microsoft.Extensions.Configuration.Ini": "2.0.2",
@@ -2138,14 +2139,14 @@
           "lib/netstandard2.0/Microsoft.Extensions.Configuration.Binder.dll": {}
         }
       },
-      "Microsoft.Extensions.Configuration.CommandLine/2.0.2": {
+      "Microsoft.Extensions.Configuration.CommandLine/2.1.1": {
         "dependencies": {
           "Microsoft.Extensions.Configuration": "2.1.1"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.Extensions.Configuration.CommandLine.dll": {
-            "assemblyVersion": "2.0.2.0",
-            "fileVersion": "2.0.2.18114"
+            "assemblyVersion": "2.1.1.0",
+            "fileVersion": "2.1.1.18157"
           }
         },
         "compile": {
@@ -5727,12 +5728,12 @@
       "path": "microsoft.extensions.configuration.binder/2.1.1",
       "hashPath": "microsoft.extensions.configuration.binder.2.1.1.nupkg.sha512"
     },
-    "Microsoft.Extensions.Configuration.CommandLine/2.0.2": {
+    "Microsoft.Extensions.Configuration.CommandLine/2.1.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-AjlsGcY+AJAftT0CJzC/meyFKWEeP309CHkZFXU2KmsmHITi/SJlNItLp3MxMshEBYhGzKeq4XYOEFwNoYzALQ==",
-      "path": "microsoft.extensions.configuration.commandline/2.0.2",
-      "hashPath": "microsoft.extensions.configuration.commandline.2.0.2.nupkg.sha512"
+      "sha512": "sha512-mLtD/B9sx0jycMcPcIweb5x0bRKBoDcN+xONQnw6urMZTyazyJED+zTfj2ZCbVsloh7SW2W6f16UpELD+xtaOA==",
+      "path": "microsoft.extensions.configuration.commandline/2.1.1",
+      "hashPath": "microsoft.extensions.configuration.commandline.2.1.1.nupkg.sha512"
     },
     "Microsoft.Extensions.Configuration.EnvironmentVariables/2.0.2": {
       "type": "package",
