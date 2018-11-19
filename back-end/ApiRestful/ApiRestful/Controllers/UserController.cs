@@ -127,10 +127,10 @@ namespace DesafioPitang.Controllers
             {
                 listError.Add("Password not informed");
             }
-            //if (signupInput.Phones != null && !signupInput.Phones.Any())
-            //{
-            //    listError.Add("Phone not informed");
-            //}
+            if (signupInput.Phones != null && !signupInput.Phones.Any())
+            {
+                listError.Add("Phone not informed");
+            }
 
             return listError;
         }
