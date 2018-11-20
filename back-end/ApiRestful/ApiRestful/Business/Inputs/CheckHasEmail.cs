@@ -1,4 +1,4 @@
-﻿namespace DesafioPitang.Business
+﻿namespace ApiRestful.Business
 {
     public class CheckHasEmail
     {

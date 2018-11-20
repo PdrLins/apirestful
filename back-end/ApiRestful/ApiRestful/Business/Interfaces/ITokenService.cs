@@ -1,7 +1,7 @@
 ﻿
-using DesafioPitang.Models;
+using ApiRestful.Models;
 
-namespace DesafioPitang.Business.Interfaces
+namespace ApiRestful.Business.Interfaces
 {
     public interface ITokenService
     {

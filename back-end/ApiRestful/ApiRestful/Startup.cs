@@ -1,5 +1,5 @@
-﻿using DesafioPitang.Business.Interfaces;
-using DesafioPitang.Data;
+﻿using ApiRestful.Business.Interfaces;
+using ApiRestful.Data;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -9,9 +9,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using System.Text;
-using DesafioPitang.Business.Services;
+using ApiRestful.Business.Services;
 
-namespace DesafioPitang
+namespace ApiRestful
 {
     public class Startup
     {
@@ -62,11 +62,13 @@ namespace DesafioPitang
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-
-
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                app.UseHsts();
             }
 
             app.UseCors(cors =>
@@ -74,7 +76,7 @@ namespace DesafioPitang
                             .AllowAnyMethod()
                             .AllowAnyHeader()
                             .AllowCredentials());
-
+            app.UseHttpsRedirection();
             app.UseAuthentication();
 
             app.UseMvc(routes =>

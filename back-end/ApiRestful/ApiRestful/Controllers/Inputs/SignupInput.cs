@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace DesafioPitang.Controllers.Inputs
+namespace ApiRestful.Controllers.Inputs
 {
     public class SignupInput
     {

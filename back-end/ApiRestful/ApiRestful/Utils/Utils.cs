@@ -3,7 +3,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace DesafioPitang.Utils
+namespace ApiRestful.Utils
 {
     public sealed class Utils
     {

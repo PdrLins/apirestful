@@ -1,15 +1,15 @@
-﻿using DesafioPitang.Data;
+﻿using ApiRestful.Data;
 using System.Security.Claims;
 using System;
 using System.Security.Principal;
 using System.IdentityModel.Tokens.Jwt;
-using DesafioPitang.Models;
+using ApiRestful.Models;
 using Microsoft.IdentityModel.Tokens;
-using DesafioPitang.Business.Interfaces;
+using ApiRestful.Business.Interfaces;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace DesafioPitang.Business.Services
+namespace ApiRestful.Business.Services
 {
     public class TokenService : ITokenService
     {
@@ -34,7 +34,7 @@ namespace DesafioPitang.Business.Services
                     });
 
             DateTime dataCriacao = DateTime.Now;
-            DateTime dataExpiracao = dataCriacao.AddHours(1);
+            DateTime dataExpiracao = dataCriacao.AddMinutes(5);
 
             var handler = new JwtSecurityTokenHandler();
             var securityToken = handler.CreateToken(new SecurityTokenDescriptor

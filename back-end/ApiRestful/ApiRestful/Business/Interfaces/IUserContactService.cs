@@ -1,7 +1,7 @@
-﻿using DesafioPitang.Models;
+﻿using ApiRestful.Models;
 using System.Collections.Generic;
 
-namespace DesafioPitang.Business.Interfaces
+namespace ApiRestful.Business.Interfaces
 {
     interface IUserContactService
     {

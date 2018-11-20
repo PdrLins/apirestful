@@ -1,9 +1,9 @@
-﻿using DesafioPitang.Models;
+﻿using ApiRestful.Models;
 using System;
 using System.Collections.Generic;
 
 
-namespace DesafioPitang.Business
+namespace ApiRestful.Business
 {
     public class SaveUser
     {

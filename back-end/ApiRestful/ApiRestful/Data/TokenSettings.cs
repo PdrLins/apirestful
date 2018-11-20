@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace DesafioPitang.Data
+namespace ApiRestful.Data
 {
     public class TokenSettings
     {

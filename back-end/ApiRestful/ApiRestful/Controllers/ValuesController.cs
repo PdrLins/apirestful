@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
-using DesafioPitang.Business;
-using DesafioPitang.Business.Interfaces;
+using ApiRestful.Business;
+using ApiRestful.Business.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
-namespace DesafioPitang.Controllers
+namespace ApiRestful.Controllers
 {
     //[Route("api/[controller]")]
     public class ValuesController : Controller

@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using DesafioPitang.Models;
+using ApiRestful.Models;
 
-namespace DesafioPitang.Data
+namespace ApiRestful.Data
 {
     public class ApiContext : DbContext
     {
@@ -19,16 +19,15 @@ namespace DesafioPitang.Data
         {
             //User
             modelBuilder.Entity<User>().HasKey(e => e.Id);
-            modelBuilder.Entity<User>().Property(p=> p.Id).ValueGeneratedOnAdd();
-            modelBuilder.Entity<User>().HasMany(c => c.Phones).WithOne(e => e.User);
+            modelBuilder.Entity<User>().Property(p => p.Id).ValueGeneratedOnAdd();
+            modelBuilder.Entity<User>().HasMany(c => c.Phones).WithOne();
 
             //UserContact
             modelBuilder.Entity<UserContact>().HasKey(e => e.Id);
             modelBuilder.Entity<UserContact>().Property(p => p.Id).ValueGeneratedOnAdd();
-            modelBuilder.Entity<UserContact>().HasOne(e => e.User).WithMany(e => e.Phones).IsRequired();
 
 
         }
-
+  
     }
 }

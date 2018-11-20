@@ -1,4 +1,4 @@
-﻿namespace DesafioPitang.Controllers.Inputs
+﻿namespace ApiRestful.Controllers.Inputs
 {
     public class SiginInput
     {

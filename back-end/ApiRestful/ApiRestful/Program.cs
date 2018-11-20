@@ -2,20 +2,20 @@
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
-namespace DesafioPitang
+namespace ApiRestful
 {
     public class Program
     {
         public static void Main(string[] args)
         {
-            BuildWebHost(args).Build();
+            BuildWebHost(args).Run();
         }
 
-        public static IWebHostBuilder BuildWebHost(string[] args) =>
+        public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
             .UseKestrel()
             .UseContentRoot(Directory.GetCurrentDirectory())
-            .UseIISIntegration()
-            .UseStartup<Startup>();
+            .UseStartup<Startup>()
+            .UseIISIntegration().Build();
     }
 }

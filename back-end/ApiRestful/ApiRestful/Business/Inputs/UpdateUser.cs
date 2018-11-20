@@ -1,8 +1,8 @@
 ﻿
-using DesafioPitang.Models;
+using ApiRestful.Models;
 using System;
 
-namespace DesafioPitang.Business
+namespace ApiRestful.Business
 {
     public class UpdateLastLoginUser
     {

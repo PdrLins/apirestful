@@ -1,10 +1,10 @@
-﻿using DesafioPitang.Models;
+﻿using ApiRestful.Models;
 
-namespace DesafioPitang.Business.Interfaces
+namespace ApiRestful.Business.Interfaces
 {
     public interface IUserService
     {
-        void Handle(SaveUser input);
+        User Handle(SaveUser input);
         bool Handle(CheckHasEmail input);
         User Handle(FindUser input);
         void Handle(UpdateLastLoginUser input);

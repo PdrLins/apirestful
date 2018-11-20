@@ -1,10 +1,11 @@
 ﻿using System.Linq;
-using DesafioPitang.Data;
-using DesafioPitang.Models;
-using DesafioPitang.Business.Interfaces;
+using ApiRestful.Data;
+using ApiRestful.Models;
+using ApiRestful.Business.Interfaces;
 using System;
+using Microsoft.EntityFrameworkCore;
 
-namespace DesafioPitang.Business.Services
+namespace ApiRestful.Business.Services
 {
     public class UserService : IUserService
     {
@@ -14,7 +15,7 @@ namespace DesafioPitang.Business.Services
             _context = context;
         }
 
-        public void Handle(SaveUser input)
+        public User Handle(SaveUser input)
         {
             var newUser = new User
             {
@@ -28,14 +29,16 @@ namespace DesafioPitang.Business.Services
             };
             _context.Users.Add(newUser);
             _context.SaveChanges();
+
+            return newUser;
         }
 
         public User Handle(FindUser input)
         {
-            var query = _context.Users.AsQueryable();
+            var query = _context.Users.Include(f => f.Phones).AsQueryable();
             if (input.Id.HasValue)
             {
-               return  query.FirstOrDefault(w => w.Id == input.Id);
+                return query.FirstOrDefault(w => w.Id == input.Id);
             }
             else
             {
@@ -64,7 +67,7 @@ namespace DesafioPitang.Business.Services
 
             user.LastLogin = DateTime.Now;
             _context.SaveChanges();
-            
+
         }
     }
 }

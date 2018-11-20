@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using DesafioPitang.Business;
-using DesafioPitang.Business.Interfaces;
-using DesafioPitang.Controllers.Inputs;
-using DesafioPitang.Models;
+using ApiRestful.Business;
+using ApiRestful.Business.Interfaces;
+using ApiRestful.Controllers.Inputs;
+using ApiRestful.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace DesafioPitang.Controllers
+namespace ApiRestful.Controllers
 {
 
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
@@ -47,15 +47,15 @@ namespace DesafioPitang.Controllers
                 Phones = signupInput.Phones.Select(s =>
                 new UserContact
                 {
-                    CodeArea = s.CodeArea,
+                    CodeArea = s.AreaCode.Value,
                     CountryCode = s.CountryCode,
-                    Number = s.Number
+                    Number = s.Number.Value
                 }).ToList()
             };
 
-            _userService.Handle(saveUser);
+            var newuser = _userService.Handle(saveUser);
 
-            return Json(Utils.Utils.Instance.ResultMessage("User created successfully", true, 201));
+            return Json(Utils.Utils.Instance.ResultMessage($"User created successfully, userId:{newuser.Id}", true, 201));
 
         }
 
@@ -77,10 +77,10 @@ namespace DesafioPitang.Controllers
             _userService.Handle(new UpdateLastLoginUser { Id = user.Id });
             var token = _jwtService.CreateToken(user);
 
-            return Json(new { UserId = user.Id, IsSucess = true, MessageCode = 201, Token= token });
+            return Json(new { UserId = user.Id, IsSucess = true, MessageCode = 201, Token = token });
         }
 
-        
+
         [HttpPost]
         public User FindUser([FromBody] FindUserInput findUserInput)
         {
@@ -130,6 +130,24 @@ namespace DesafioPitang.Controllers
             if (signupInput.Phones != null && !signupInput.Phones.Any())
             {
                 listError.Add("Phone not informed");
+            }
+            else
+            {
+                if (signupInput.Phones.Any(a => !a.AreaCode.HasValue))
+                {
+                    listError.Add("Phone informed without CodeArea");
+
+                }
+                if (signupInput.Phones.Any(a => string.IsNullOrWhiteSpace(a.CountryCode)))
+                {
+                    listError.Add("Phone not informed without CountryCode");
+
+                }
+                if (signupInput.Phones.Any(a => !a.Number.HasValue))
+                {
+                    listError.Add("Phone not informed without Number");
+
+                }
             }
 
             return listError;
