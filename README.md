@@ -59,8 +59,15 @@ Obs: O id do usuário é um sequencial gerado pelo banco e único.
     - E-mail inexistente ou senha errada [retornar um erro com a mensagem "Invalid e-mail or password"];
     - Campos não preenchidos [retornar um erro com a mensagem "Missing fields"];
 
-## /me 
-* Essa rota espera o login do usuário (via header):
+## /findUser 
+* Essa rota espera o login email e senha do usuário:
+    ```json
+        {
+            "email": "hello@world.com",
+            "password": "hunter2"
+        }
+    ```
+e token (via header)
     - Authorization [string]
  
 * Em caso de sucesso a API retorna:
