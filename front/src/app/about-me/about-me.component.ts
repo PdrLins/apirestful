@@ -14,8 +14,8 @@ export class AboutMeComponent implements OnInit {
   ngOnInit() {
     let id = this.route.snapshot.paramMap.get('id');
     if(id){
-      let user= {id:id}
-     this.userService.findUser(user).then((result)=>{
+      let user ={id:id}
+     this.userService.me().then((result)=>{
         if(result!= null){
           localStorage.setItem('user', result.user);
           this.user = result;

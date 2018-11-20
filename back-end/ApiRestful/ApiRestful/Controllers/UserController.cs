@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using ApiRestful.Business;
 using ApiRestful.Business.Interfaces;
 using ApiRestful.Controllers.Inputs;
@@ -82,10 +83,18 @@ namespace ApiRestful.Controllers
 
 
         [HttpPost]
-        public User FindUser([FromBody] FindUserInput findUserInput)
+        public User FindUser()
         {
-            return _userService.Handle(new FindUser { Id = findUserInput.Id });
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            return _userService.Handle(new FindUser { Id = Convert.ToInt32(userId)});
         }
+
+        //[HttpPost]
+        //public User FindUser([FromBody] FindUserInput findUserInput)
+        //{
+        //    return _userService.Handle(new FindUser { Id = findUserInput.Id });
+        //}
 
         [AllowAnonymous]
         public User FindUser(int id)

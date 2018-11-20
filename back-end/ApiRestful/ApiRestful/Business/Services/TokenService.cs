@@ -27,9 +27,9 @@ namespace ApiRestful.Business.Services
                 SecurityAlgorithms.HmacSha256);
 
             ClaimsIdentity identity = new ClaimsIdentity(
-                    new GenericIdentity(user.Email, "Token"),
+                    new GenericIdentity(user.Email, "Email"),
                     new[] {
-                        new Claim("ID", user.Id.ToString())
+                        new Claim(ClaimTypes.NameIdentifier, user.Id.ToString())
 
                     });
 

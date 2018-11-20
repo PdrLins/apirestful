@@ -15,7 +15,12 @@ export class UserService {
   signin(user: any) {
     return this.http.postRequest('user/Signin', user);
   }
-  findUser(user) {
+
+  findUser(user:any) {
     return this.http.postRequest('user/FindUser', user);
+  }
+
+  me() {
+    return this.http.postRequest('user/FindUser',{});
   }
 }
