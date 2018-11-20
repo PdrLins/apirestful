@@ -1,5 +1,4 @@
-﻿using DesafioPitang.Business;
-using DesafioPitang.Business.Interfaces;
+﻿using DesafioPitang.Business.Interfaces;
 using DesafioPitang.Data;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -9,9 +8,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
-using System;
 using System.Text;
-using Microsoft.AspNetCore.Authorization;
 using DesafioPitang.Business.Services;
 
 namespace DesafioPitang
@@ -36,7 +33,11 @@ namespace DesafioPitang
 
 
             services.AddSingleton(tokenSettings);
+            services.Configure<IISOptions>(options => {
+                options.ForwardClientCertificate = false;
+            });
             services.AddDbContext<ApiContext>(options => options.UseInMemoryDatabase("InMemoryDatabase"));
+
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<ITokenService, TokenService>();
             services.AddAuthentication(auth =>

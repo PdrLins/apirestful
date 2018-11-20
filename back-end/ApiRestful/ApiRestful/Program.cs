@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.IO;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
 
 namespace DesafioPitang
 {
@@ -14,22 +8,14 @@ namespace DesafioPitang
     {
         public static void Main(string[] args)
         {
-            //var config = new ConfigurationBuilder().AddCommandLine(args).Build();
-            //var host = new WebHostBuilder()
-            //    .UseKestrel()
-            //    .UseContentRoot(Directory.GetCurrentDirectory())
-            //    //.UseConfiguration(config)
-            //    .UseIISIntegration()
-            //    .UseStartup<Startup>()
-            //    .Build();
-
-            //host.Run();
-            BuildWebHost(args).Run();
+            BuildWebHost(args).Build();
         }
 
-        public static IWebHost BuildWebHost(string[] args) =>
+        public static IWebHostBuilder BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>()
-                .Build();
+            .UseKestrel()
+            .UseContentRoot(Directory.GetCurrentDirectory())
+            .UseIISIntegration()
+            .UseStartup<Startup>();
     }
 }
