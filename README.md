@@ -60,13 +60,8 @@ Obs: O id do usuário é um sequencial gerado pelo banco e único.
     - Campos não preenchidos [retornar um erro com a mensagem "Missing fields"];
 
 ## /findUser 
-* Essa rota espera o login email e senha do usuário e token (via header):
-    ```json
-        {
-            "email": "hello@world.com",
-            "password": "hunter2"
-        }
-    ```
+* Essa rota token (via header):
+
     - Authorization : [string]
  
 * Em caso de sucesso a API retorna:
