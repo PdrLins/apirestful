@@ -27,7 +27,7 @@ As mensagens são com o seguinte formato:
     {
         "firstName": "Hello",
         "lastName": "World",
-        "email": "hello@world.com"
+        "email": "hello@world.com",
         "password": "hunter2",
         "phones": [
             {
