@@ -9,6 +9,8 @@ As mensagens são com o seguinte formato:
 ```json
     {"message": "Error message", "errorCode": 123}
 ```
+* A aplicação utiliza de codificação md5Hash para criptografar senhas de usuário
+* A Aplicação utiliza como algoritimo de seguração o HmacSha256 na criação do token JWT
 
 ## /signup
 
@@ -31,9 +33,9 @@ As mensagens são com o seguinte formato:
         "password": "hunter2",
         "phones": [
             {
-                "number": 988887888,
-                "area_code": 81,
-                "country_code": "+55"
+                "number": 999999999,
+                "codearea": 99,
+                "codecountry": "+55"
             }
         ]
     }
