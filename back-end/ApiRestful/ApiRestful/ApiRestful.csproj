@@ -5,7 +5,9 @@
     <AssemblyName>apirestful</AssemblyName>
     <RootNamespace>apirestful</RootNamespace>
     <Platforms>AnyCPU;x64</Platforms>
-	<PublishWithAspNetCoreTargetManifest>False</PublishWithAspNetCoreTargetManifest>
+  </PropertyGroup>
+   <PropertyGroup>
+    <PublishWithAspNetCoreTargetManifest>false</PublishWithAspNetCoreTargetManifest>
   </PropertyGroup>
 
   <ItemGroup>
