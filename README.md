@@ -9,6 +9,8 @@ As mensagens são com o seguinte formato:
 ```json
     {"message": "Error message", "errorCode": 123}
 ```
+* A aplicação utiliza de codificação md5Hash para criptografar senhas de usuário
+* A Aplicação utiliza como algoritimo de seguração o HmacSha256 na criação do token JWT
 
 ## /signup
 
@@ -27,13 +29,13 @@ As mensagens são com o seguinte formato:
     {
         "firstName": "Hello",
         "lastName": "World",
-        "email": "hello@world.com"
+        "email": "hello@world.com",
         "password": "hunter2",
         "phones": [
             {
-                "number": 988887888,
-                "area_code": 81,
-                "country_code": "+55"
+                "number": 999999999,
+                "codearea": 99,
+                "codecountry": "+55"
             }
         ]
     }
@@ -57,9 +59,10 @@ Obs: O id do usuário é um sequencial gerado pelo banco e único.
     - E-mail inexistente ou senha errada [retornar um erro com a mensagem "Invalid e-mail or password"];
     - Campos não preenchidos [retornar um erro com a mensagem "Missing fields"];
 
-## /me 
-* Essa rota espera o login do usuário (via header):
-    - Authorization [string]
+## /findUser 
+* Essa rota token (via header):
+
+    - Authorization : [string]
  
 * Em caso de sucesso a API retorna:
     - `firstName`: Nome do usuário;
@@ -74,6 +77,7 @@ Obs: O id do usuário é um sequencial gerado pelo banco e único.
 
 ## Tecnologias
 * Angular 2> (4).
+* Bootstrap 
 * Persistência com Entity Framework e Banco de dados em memória.
 * Framework IOC padrão do .Net Core.
 * JSON Web Token (JWT) como auteticação.
