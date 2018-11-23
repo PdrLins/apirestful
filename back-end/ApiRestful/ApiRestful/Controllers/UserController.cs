@@ -136,28 +136,28 @@ namespace ApiRestful.Controllers
             {
                 listError.Add("Password not informed");
             }
-            if (signupInput.Phones != null && !signupInput.Phones.Any())
-            {
-                listError.Add("Phone not informed");
-            }
-            else
-            {
-                if (signupInput.Phones.Any(a => !a.AreaCode.HasValue))
-                {
-                    listError.Add("Phone informed without CodeArea");
+            //if (signupInput.Phones != null && !signupInput.Phones.Any())
+            //{
+            //    listError.Add("Phone not informed");
+            //}
+            //else
+            //{
+            //    //if (signupInput.Phones.Any(a => !a.AreaCode.HasValue))
+            //    //{
+            //    //    listError.Add("Phone informed without CodeArea");
 
-                }
-                if (signupInput.Phones.Any(a => string.IsNullOrWhiteSpace(a.CountryCode)))
-                {
-                    listError.Add("Phone not informed without CountryCode");
+            //    //}
+            //    //if (signupInput.Phones.Any(a => string.IsNullOrWhiteSpace(a.CountryCode)))
+            //    //{
+            //    //    listError.Add("Phone not informed without CountryCode");
 
-                }
-                if (signupInput.Phones.Any(a => !a.Number.HasValue))
-                {
-                    listError.Add("Phone not informed without Number");
+            //    //}
+            //    //if (signupInput.Phones.Any(a => !a.Number.HasValue))
+            //    //{
+            //    //    listError.Add("Phone not informed without Number");
 
-                }
-            }
+            //    //}
+            //}
 
             return listError;
         }
